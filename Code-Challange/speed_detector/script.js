@@ -12,7 +12,7 @@
 document.getElementById("speedDetectorForm").addEventListener("submit", function(event))
 {
     event.preventDefault();
-    const currentSpeed = document.getElementById("currentSpeed").ariaValueMax;
+    const currentSpeed = document.getElementById("currentSpeed").value;
     const currentSpeedInt = parseInt(currentSpeed);
     //we set the data type to strictly integers.
 
@@ -27,11 +27,23 @@ document.getElementById("speedDetectorForm").addEventListener("submit", function
 
     }else{
         const exceededSpeed = currentSpeedInt - 70;
-        //logic set for over limit value
-        const points = math.floor(exceededSpeed / 5)
-        const totalPoints = demeritPoints + points;
-    
-    // we noe console log to display resaults}
+        const points = Math.floor(exceededSpeed /5);
+        const totalPoints = demeritPointsInt + points;
+
+        //we now display the values.
+
+        console.log(`Your points are ${points} demerit points`);
+        console.log(`Exceeded the limit by ${exceededSpeed} km/hr`);
+        console.log(`your current points of demerit are ${totalPoints}points`);
+
+        //having displayed the result, we proceed to the output response.
+
+        if(totalPoints > 12){
+            console.log("License suspended");
+        }else{
+            console.log("Drive safe, nice driving!");
+        }
+        }
 
 
 }
