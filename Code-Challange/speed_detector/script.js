@@ -3,13 +3,23 @@
 //print total demerit points
 // if demerit points are >12 print license suspended.
 
+//create a function as control.(default manenoz nini nini)
+function checkSpeed(){
+    const carSpeedElement = document.getElementById("car-speed");
 
+    // set the condition to actualize the logic.
+
+    if (!carSpeedElement){
+        console.error("element not found");
+        return;
+    }
+}
 
 
 //we use the .getElementById function to access html content.
 
 
-document.getElementById("speedDetectorForm").addEventListener("submit", function(event))
+document.getElementById("speedDetectorForm").addEventListener("submit", function(event)
 {
     event.preventDefault();
     const currentSpeed = document.getElementById("currentSpeed").value;
@@ -36,6 +46,7 @@ document.getElementById("speedDetectorForm").addEventListener("submit", function
         console.log(`Exceeded the limit by ${exceededSpeed} km/hr`);
         console.log(`your current points of demerit are ${totalPoints}points`);
 
+
         //having displayed the result, we proceed to the output response.
 
         if(totalPoints > 12){
@@ -46,4 +57,13 @@ document.getElementById("speedDetectorForm").addEventListener("submit", function
         }
 
 
+});
+
+//add event listner.
+document.addEventListener("DOMContentLoaded", function()){
+    const checkSpeedButton = document.getElementById("check-speed");
+    checkSpeedButton.addEventListener("click",function(){
+        checkSpeed();
+    });
+    });
 }
