@@ -20,7 +20,18 @@ document.getElementById("speedDetectorForm").addEventListener("submit", function
     const demeritPoints = document.getElementById("demeritPoints").value;
     const demeritPointsInt = parseInt(demeritPoints);
 
-    //
+    //speed check logic
+
+    if(currentSpeedInt <= 70){
+        console.log("ok");
+
+    }else{
+        const exceededSpeed = currentSpeedInt - 70;
+        //logic set for over limit value
+        const points = math.floor(exceededSpeed / 5)
+        const totalPoints = demeritPoints + points;
+    
+    // we noe console log to display resaults}
 
 
 }
