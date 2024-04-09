@@ -159,7 +159,31 @@ const displayResources = () => {
         resourcesList.appendChild(listItem);
     });
 };
-
+//event listner for resources added.
 document.addEventListener('DOMContentLoaded', () => {
     displayResources();
 });
+
+//feedback section.
+//variable declaration.
+const feedbackList = document.getElementById('feedback-list');
+const feedbackForm = document.getElementById('feedback-form');
+
+
+ //function to display.
+ const displayFeedback = () => {
+    feedbackList.innerHTML = '';
+    feedbackForm.forEach(feedbackItem => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+        <strong>${feedbackItem.name}</strong>: ${feedbackItem.message}
+        `;
+        feedbackList.appendChild(listItem);
+
+    });
+
+ };
+
+ //add event listner for the feedback.
+
+ feedbackForm.addEventListener('submit')
