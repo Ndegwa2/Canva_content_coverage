@@ -104,7 +104,7 @@ const resources ={
 
     },
     reduceWaste:{
-        title: 'Reducing Household Waste'
+        title: 'Reducing Household Waste',
         content: `Tips and tricks for reducing waste in our homes.
         
         Recycle, reuse, repair
@@ -122,7 +122,6 @@ const resources ={
         When you are in the supermarket, 
         avoid buying items with excessive plastic packaging. 
         In some supermarkets, you may be able to leave unwanted packaging behind.
-        
         Choose fruit and vegetables that don’t come prepackaged and bring your own bag to carry them home. 
         Choose food items that come in recyclable containers. 
         
@@ -130,9 +129,7 @@ const resources ={
 
 Single-use plastics (SUPs) are items that are used once, or for a short period of time, 
 and then thrown away. 
-For example, straws, cotton bud sticks and polystyrene
- food containers.
-
+For example, straws, cotton bud sticks and polystyrenefood containers.
 You should avoid using SUPs 
 as they take a long time to break down and 
 can damage the environment, particularly oceans. 70% of marine litter in the world comes from SUPs.
@@ -141,10 +138,28 @@ Buy second hand
 Buying second hand products will save you money.
  It also decreases the demand for new items, which preserves natural resources.
   Cars, clothes, exercise equipment, furniture and books are all examples of items that can be bought and used second hand.
-
 If you have items that you do not want, instead of throwing them out, you could donate them to a charity shop. 
 You could also donate or sell them through buy and sell websites or social media groups.
 `
     }
 };
 
+//having populated the resource section we now display it.
+
+const displayResources = () => {
+    const resourcesList = document.getElementById('resources-list');
+    Object.keys(resources).forEach(key => {
+        const resource = resources[key];
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <h3><a href="${resource.link}" target="_blank">${resource.title}</a></h3>
+            ${resource.content.split('\n').map(item => `<li>${item.trim()}</li>`).join('')}
+          
+        `;
+        resourcesList.appendChild(listItem);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayResources();
+});
