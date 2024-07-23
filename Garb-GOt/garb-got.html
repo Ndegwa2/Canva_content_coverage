@@ -3,66 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garb-Got</title>
-    <link script="/home/ndegwa/Garb-GOt/Garb-Got.js">
-   
+    <title>GARB-GOT</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <img src="https://img.freepik.com/premium-vector/garbage-truck-sanitation-worker-garbage-man-uniform-with-trash-bin-recycling-symbol_625536-3611.jpg?w=1380" alt="logo"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
     <header>
         <h1>Garb-Got</h1>
-        <style>
-            h1{
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: larger;
-                text-align: center;
-                color: black;
-                padding: 4px;
-                margin: 5px;
-
-                
-            }
-            h2{
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-size: medium;
-                font-style: normal;
-                color: black;
-                padding:10px;
-                margin:5px;
-            }
-            .schedule-item{
-                background-color: azure;
-                padding:10px;
-                margin:5px;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            body{
-                background-color: azure;
-                display: inline;
-                border: 0cap;
-            }
-
-        </style>
     </header>
     <main>
-        <!--creating a section for the scheduler-->
-        <section id="scheduler">
+        <!-- Garbage Collection Schedule Section -->
+        <section id="schedule-result">
             <h2>Garbage Collection Schedule</h2>
-
+            <form id="pick-up-schedule-form">
+                <label for="estate">Input Estate:</label>
+                <input type="text" id="estate" name="estate" required>
+                <button type="submit">View</button>
+            </form>
         </section>
-        <!--section for the educational resources-->
-        <section id="educational">
 
+        <!-- Educational Resources Section -->
+        <section id="resources">
+            <h2>Educational Resources</h2>
+            <ul id="resources-list"></ul>
         </section>
-        <!--Feedback section-->
-        <section id="Feedback">
+
+        <!-- Facilities Awards and Performance Section -->
+        <div id="performance-section">
+            <h2>Facilities Awards and Performance</h2>
+            <form id="performance-search-form">
+                <label for="facility-search">Search Facility:</label>
+                <input type="text" id="facility-search" name="facility-search" required>
+                <button type="submit">Search</button>
+            </form>
+            <ul id="performance-results"></ul>
+        </div>
+
+        <!-- Waste Type Search Section -->
+        <form id="waste-type-search-form">
+            <label for="waste-type">Enter Waste Type:</label>
+            <input type="text" id="waste-type" name="waste-type" required>
+            <button type="submit">Search</button>
+        </form>
+        <ul id="search-results"></ul>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
             <h2>Feedback</h2>
+            <form id="feedback-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="estate">Estate:</label>
+                <input type="text" id="estate" name="estate" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <ul id="feedback-list"></ul>
         </section>
-
-
     </main>
     <footer>
         <p>&copy;2024 Garb-Got. All rights reserved</p>
     </footer>
+    <script src="Garb-Got.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@6.7.0/dist/ol.js"></script>
 </body>
 </html>
