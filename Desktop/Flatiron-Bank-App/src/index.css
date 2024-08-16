@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: LightPink; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .App {
+    width: 80%;
+    max-width: 1200px;
+    background-color: White; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: DarkRed; 
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid LightCoral; 
+    border-radius: 4px;
+    width: calc(100% - 22px); 
+  }
+  
+  button {
+    background-color: HotPink; 
+    color: White; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: DeepPink; 
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid LightCoral; 
+  }
+  
+  th {
+    background-color: HotPink; 
+    color: White; 
+  }
+  
+  tr:hover {
+    background-color: MistyRose; 
+  }
