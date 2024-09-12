@@ -46,8 +46,8 @@ from coffee import Coffee
 from order import Order
 
 # Creating instances
-alice = Customer("Alice")
-espresso = Coffee("Espresso")
+Bob = Customer("Bob")
+latte = Coffee("latte")
 order1 = alice.create_order(espresso, 5.0)
 
 # Display information
